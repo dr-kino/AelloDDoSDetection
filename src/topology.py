@@ -15,13 +15,13 @@ from subprocess import call
 Two directly connected switches plus a host for each switch:
    host --- switch --- switch --- host
 Adding the 'topos' dict with a key/value pair to generate our newly defined
-topology enables one to pass in '--topo=mytopo' from the command line.
+topology enables one to pass in '--topo=topology' from the command line.
 """
 
 from mininet.topo import Topo
 
 
-class MyTopo(Topo):
+class Topology(Topo):
     def __init__(self):
 
         # Initialize topology
@@ -39,5 +39,5 @@ class MyTopo(Topo):
         self.addLink(rightSwitch, rightHost)
 
 
-topos = {'mytopo': (lambda: MyTopo())}
+topos = {'topology': (lambda: Topology())}
 
