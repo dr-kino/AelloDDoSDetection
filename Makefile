@@ -1,3 +1,6 @@
+BMV2_SWITCH_EXE = simple_switch_grpc
+TOPO = topo/topology.json
+
 BUILD_DIR = build
 PCAP_DIR = pcaps
 LOG_DIR = logs
@@ -5,7 +8,7 @@ LOG_DIR = logs
 P4C = p4c-bm2-ss
 P4C_ARGS += --p4runtime-files $(BUILD_DIR)/$(basename $@).p4.p4info.txt
 
-RUN_SCRIPT = ../../utils/run_exercise.py
+RUN_SCRIPT = utils/run.py
 
 ifndef TOPO
 TOPO = topology.json
